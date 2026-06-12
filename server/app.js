@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use('/api/intel', intelRouter);
 
 // Serve Static Assets in production
-const distPath = path.join(__dirname, '../dist/client');
+const distPath = path.join(__dirname, '../dist');
 app.use(express.static(distPath));
 
 // Catch-all route to serve the Single Page Application's index.html

@@ -8,6 +8,7 @@
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "nodemon server/app.js",
     "dev:client": "vite",
+    "build": "vite build",
     "start": "node server/app.js"
   },
   "dependencies": {
