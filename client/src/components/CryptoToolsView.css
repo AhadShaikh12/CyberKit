@@ -1,0 +1,209 @@
+/* =============================================
+   CryptoToolsView.css  –  Full-width responsive
+   ============================================= */
+
+/* View panel fills ALL available space */
+.view-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.view-panel>h1 {
+  font-size: clamp(20px, 3vw, 28px);
+  margin-bottom: 6px;
+}
+
+/* ─── Tabs: single row, scrollable on mobile ──── */
+.crypto-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+  padding-bottom: 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.crypto-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.crypto-tabs .tab-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px 6px 0 0;
+}
+
+.crypto-tabs .tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.crypto-tabs .tab-btn.active {
+  color: var(--color-cyan);
+  border-bottom: 2px solid var(--color-cyan);
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+/* ─── Cards: fills full width ─────────────────── */
+.crypto-card {
+  background: rgba(13, 18, 28, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 28px 32px;
+  width: 100%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.3s;
+}
+
+.crypto-card:hover {
+  border-color: rgba(0, 229, 255, 0.2);
+}
+
+.crypto-card h2 {
+  font-size: clamp(17px, 2.5vw, 22px);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ─── Two-column layout for wide screens ─────── */
+.crypto-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ─── Form groups ────────────────────────────── */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* ─── Diff two-column grid ───────────────────── */
+.diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* ─── Button row ─────────────────────────────── */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* ─── Entropy badge ──────────────────────────── */
+.entropy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--color-cyan);
+  font-family: var(--font-mono);
+}
+
+/* ─── Strength meter bar ─────────────────────── */
+.strength-bar-wrap {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease, background 0.4s ease;
+}
+
+/* ─── Range slider ───────────────────────────── */
+input[type="range"].input-control {
+  padding: 6px 0;
+  cursor: pointer;
+  accent-color: var(--color-cyan);
+  height: auto;
+}
+
+/* ─── Output result area ─────────────────────── */
+.result-area {
+  margin-top: 24px;
+}
+
+.result-area>label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* ═══ RESPONSIVE BREAKPOINTS ════════════════════ */
+@media (max-width: 900px) {
+  .crypto-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crypto-card {
+    padding: 22px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .crypto-tabs .tab-btn {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+
+  .crypto-card {
+    padding: 18px 14px;
+    border-radius: 10px;
+  }
+
+  .btn-row .btn {
+    flex: 1 1 45%;
+    font-size: 12px;
+    padding: 9px 8px;
+  }
+}

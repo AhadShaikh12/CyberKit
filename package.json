@@ -1,0 +1,36 @@
+{
+  "name": "cyberkit",
+  "version": "1.0.0",
+  "description": "Cyber Security Toolkit",
+  "type": "module",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "nodemon server/app.js",
+    "dev:client": "vite",
+    "start": "node server/app.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "axios": "^1.17.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "nodemailer": "^8.0.11",
+    "pg": "^8.21.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "speakeasy": "^2.0.0",
+    "ua-parser-js": "^2.0.10"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3",
+    "nodemon": "^3.1.14",
+    "vite": "^8.0.16"
+  }
+}
